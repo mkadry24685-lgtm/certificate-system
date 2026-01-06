@@ -101,7 +101,7 @@ function AddCertificate() {
       }
 
       const res = await axios.post(
-        "http://localhost:5000/api/certificates",
+        "https://certificate-system-backend.vercel.app/api/certificates",
         formData,
         { 
           headers: { 

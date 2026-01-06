@@ -11,7 +11,7 @@ const CertificateView = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/certificates/${id}`);
+        const res = await axios.get(`https://certificate-system-backend.vercel.app/api/certificates/${id}`);
         setCertificate(res.data);
       } catch (err) {
         console.log(err);

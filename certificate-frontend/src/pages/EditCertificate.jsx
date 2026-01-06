@@ -56,7 +56,7 @@ function EditCertificate() {
   useEffect(() => {
     const fetchCertificate = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/certificates/${id}`);
+        const res = await axios.get(`https://certificate-system-backend.vercel.app/api/certificates/${id}`);
         const cert = res.data;
         
         setForm({
@@ -118,7 +118,7 @@ function EditCertificate() {
       }
 
       await axios.put(
-        `http://localhost:5000/api/certificates/${id}`,
+        `https://certificate-system-backend.vercel.app/api/certificates/${id}`,
         formData,
         { 
           headers: { 

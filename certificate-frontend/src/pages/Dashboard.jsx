@@ -22,7 +22,7 @@ function Dashboard() {
   // دالة تجيب الشهادات
   const fetchCertificates = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/certificates", {
+      const res = await axios.get("https://certificate-system-backend.vercel.app/api/certificates", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCertificates(res.data);
@@ -40,7 +40,7 @@ function Dashboard() {
     if (!window.confirm("هل أنت متأكد من حذف هذه الشهادة؟")) return;
     
     try {
-      await axios.delete(`http://localhost:5000/api/certificates/${id}`, {
+      await axios.delete(`https://certificate-system-backend.vercel.app/api/certificates/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert("تم حذف الشهادة بنجاح");

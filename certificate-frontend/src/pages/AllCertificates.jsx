@@ -8,7 +8,7 @@ const AllCertificates = () => {
   useEffect(() => {
     const fetchCertificates = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/certificates");
+        const res = await axios.get("https://certificate-system-backend.vercel.app/api/certificates");
         setCertificates(res.data);
       } catch (err) {
         console.log(err);
