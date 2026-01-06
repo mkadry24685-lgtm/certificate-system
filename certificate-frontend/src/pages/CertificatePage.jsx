@@ -56,7 +56,7 @@ const handleDownloadPdf = async () => {
     if (!qrInstanceRef.current) {
       qrInstanceRef.current = new QRCodeStyling({
           width: 130,
-          height: 120,
+          height: 125,
         type: "svg",
         data: dataUrl,
         dotsOptions: { type: "square", color: "#040404ff" },
