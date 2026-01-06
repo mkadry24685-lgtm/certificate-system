@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=El+Messiri:wght@400..700&family=Noto+Sans+Arabic:wght@100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+* {
+  font-family: "El Messiri", sans-serif;
+  font-weight: 300;
+}
+
+
+
+.cert-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #f4f8fb;
+  padding: 30px 0;
+}
+
+.cert-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+}
+
+.cert-card {
+  width: 600px;
+  background: #f4f8fb;
+  border: 1px solid #bebcbc8a;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  direction: ltr;
+  padding: 10px;
+}
+
+.containerTop{
+    border: #1a1a1a3d 1px solid;
+    box-shadow: #0d0d0d33 0px 4px 8px;
+    padding:1px 15px;
+    background-image: url('/back1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+/* ====== HEADER LOGOS ====== */
+.header-section {
+  direction: rtl;
+}
+.header-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line{
+    width:0.5px;
+    height:70px;
+    background:#a5a5a52d;
+    margin: 0 5px;
+}
+
+.cert-logo {
+  width: 50px;
+  object-fit: contain;
+}
+
+/* ====== MAIN TITLE ====== */
+
+.header-color{
+    background: #107475;
+    margin-left:-15px;
+}
+.cert-main-title,
+.main-title {
+  text-align: center;
+  font-weight: 300;
+  color: #f0fffa;
+  letter-spacing: 1px;
+  direction: rtl;
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 28px;
+}
+
+
+/* ====== TOP SECTION (Left + Right) ====== */
+.cert-top-section {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+/* ====== LEFT SIDE (PHOTO + QR) ====== */
+.cert-left {
+  width: 130px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  order: -1;
+}
+
+.cert-photo-box {
+  width: 100%;
+  height: 110px;
+  border: 1px solid #82b74b;
+  margin-bottom: 10px;
+  background: #f9f9f9;
+  padding: 5px;
+}
+
+.cert-photo {
+  width: 120px;
+  height: 110px;
+  object-fit: cover;
+}
+
+.cert-qr-box {
+  background: #f9f9f9;
+  border: 1px solid #82b74b;
+  text-align: center;
+  width: 100%;
+  height: 120px; /* match photo box height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.cert-qr-box img,
+.cert-qr-box canvas,
+.cert-qr-box svg {
+  width: 100%;
+  height: 110px;
+  margin-top: 10px;
+  /* ensure images fit without distortion */
+  object-fit: cover;
+}
+
+/* ====== RIGHT SIDE INFORMATION ====== */
+.cert-right {
+  flex: 1;
+  direction: rtl;
+}
+
+.cert-name {
+  color: #107475;
+  font-size: 26px;
+  font-weight: 350;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin:-6px  0px ;
+  padding: 0px;
+  font-family: "Cairo", sans-serif;
+}
+
+/* ===== GRID OF INFO - 2 COLUMNS ===== */
+.cert-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  direction: rtl;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px 12px;
+  text-align: right;
+  margin: 0px 0px -10px 0px;
+}
+
+.info-row span {
+  font-weight: 700;
+  font-size: 12px;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  display: block;
+  font-family: "Cairo", sans-serif;
+  
+}
+
+.info-row p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  background: white;
+  padding-right: 5px;
+  min-height: 25px;
+  margin-top:-1px;
+  font-family: "Cairo", sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+
+/* ====== LINKS SECTION ====== */
+.links {
+  margin-top: 2px;
+  padding-right: 20px;
+  border-bottom: 1px solid #107475;
+  border-right: 1px solid #107475;
+  border-radius: 0px 1px 25px 0px;
+  direction: rtl;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap
+}
+
+.links div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #107475;
+  font-weight: 700;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.links span {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+.title{
+    font-weight: 700;
+    font-size: px;
+    border-right: #b7b6b6a4 1px dotted;
+    padding-right: 5px;
+    margin-right: 10px;
+    color: #9191912f;
+}
+.title2{
+    margin-left:5px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #3d3d3d;
+}
+
+.num{
+    font-weight: 500;
+    font-size: 13px;
+    margin-left: 5px;
+    color: #686868;
+    font-size:20px;
+}
+
+.circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1.5px solid #82b74b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #82b74b;
+  flex-shrink: 0;
+  font-size: 5px;
+}
+.circle2 {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  border: 1.6px solid #82b74b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #82b74b;
+  flex-shrink: 0;
+  font-size: 5px;
+}
+.circle2 svg {
+  width: 12px;
+  height: 12px;
+  color: #82b74b;
+}
+
+.circle svg {
+  width: 10px;
+  height: 10px;
+  color: #82b74b;
+}
+
+
+/* ====== FOOTER SECTION ====== */
+.cert-footer {
+  background-image: url('/back2.png.jpeg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: #1a1a1a3d 1px solid;
+  box-shadow: #0d0d0d33 0px 4px 8px;
+  padding: 0px ;
+  margin-top: 2px;
+  direction: rtl;
+  min-height: 350px;
+  width: 100%;
+}
+
+
+
+/* ====== ACTION BUTTONS ====== */
+.cert-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 20px;
+}
+
+.cert-actions button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  background: #1a1a1a;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.2);
+}
+
+
+
+.cert-actions button:last-child {
+  background: #666;
+  box-shadow: 0 4px 12px rgba(102, 102, 102, 0.2);
+}
+
+.cert-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 26, 26, 0.3);
+}
+
+.cert-actions button:last-child:hover {
+  background: #888;
+  box-shadow: 0 8px 20px rgba(102, 102, 102, 0.3);
+}
+
+/* ====== PRINT STYLES ====== */
+
+
+@media print {
+
+@media print {
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body,
+  .cert-container {
+    background: white !important;
+    padding: 0 !important;
+  }
+
+  .cert-actions {
+    display: none !important;
+  }
+
+  .cert-wrapper {
+    width: 100% !important;
+    justify-content: center;
+  }
+
+  /* 🔑 نفس مقاس التصميم */
+  .cert-card {
+    width: 600px !important;
+    box-shadow: none !important;
+    border: 1px solid #bebcbc8a !important;
+    background: #f4f8fb !important;
+  }
+
+  .cert-photo-box {
+    width: 130px !important;
+    height: 110px !important;
+  }
+
+  .cert-qr-box img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+}}
+
