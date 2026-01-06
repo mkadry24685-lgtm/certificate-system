@@ -8,19 +8,6 @@ const CertificateView = () => {
   const { id } = useParams();
   const [certificate, setCertificate] = useState(null);
 
-  const formatHijriDate = (dateString) => {
-    if (!dateString) return "-";
-    try {
-      return new Intl.DateTimeFormat("ar-SA-u-ca-islamic", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      }).format(new Date(dateString));
-    } catch (e) {
-      return dateString;
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -101,22 +88,16 @@ const CertificateView = () => {
 
 
           <div className="certificate-view-info-row">
-            <span className="certificate-view-label">تاريخ إصدار الشهادة الصحية (هجري)</span>
-            <div className="input-box">{certificate.healthCertIssueDateHijri || formatHijriDate(certificate.healthCertIssueDate)}</div>
-          </div>
-
-          <div className="certificate-view-info-row">
-            <span className="certificate-view-label">تاريخ إصدار الشهادة الصحية (هجري)</span>
-            <div className="input-box">{formatHijriDate(certificate.healthCertIssueDate)}</div>
+            <span className="certificate-view-label">تاريخ إصدار الشهادة الصحية</span>
+            <div className="input-box">
+              {certificate.healthCertIssueDate ? new Date(certificate.healthCertIssueDate).toLocaleDateString("en-GB") : "-"}
+            </div>
           </div>
           <div className="certificate-view-info-row">
-            <span className="certificate-view-label">تاريخ نهاية الشهادة الصحية (هجري)</span>
-            <div className="input-box">{certificate.healthCertExpiryDateHijri || formatHijriDate(certificate.healthCertExpiryDate)}</div>
-          </div>
-
-          <div className="certificate-view-info-row">
-            <span className="certificate-view-label">تاريخ نهاية الشهادة الصحية (هجري)</span>
-            <div className="input-box">{formatHijriDate(certificate.healthCertExpiryDate)}</div>
+            <span className="certificate-view-label">تاريخ نهاية الشهادة الصحية</span>
+            <div className="input-box">
+              {certificate.healthCertExpiryDate ? new Date(certificate.healthCertExpiryDate).toLocaleDateString("en-GB") : "-"}
+            </div>
           </div>
           <div className="certificate-view-info-row">
             <span className="certificate-view-label">نوع البرنامج التثقيفي</span>
@@ -124,8 +105,10 @@ const CertificateView = () => {
           </div>
 
           <div className="certificate-view-info-row">
-            <span className="certificate-view-label">تاريخ انتهاء البرنامج التثقيفي (هجري)</span>
-            <div className="input-box">{formatHijriDate(certificate.educationalProgramEndDate)}</div>
+            <span className="certificate-view-label">تاريخ انتهاء البرنامج التثقيفي</span>
+            <div className="input-box">
+              {certificate.educationalProgramEndDate ? new Date(certificate.educationalProgramEndDate).toLocaleDateString("en-GB") : "-"}
+            </div>
           </div>
           <div className="certificate-view-info-row">
             <span className="certificate-view-label">رقم الرخصة</span>

@@ -18,19 +18,6 @@ const CertificatePage = () => {
   const qrContainerRef = useRef(null);
   const qrInstanceRef = useRef(null);
 
-  const formatHijriDate = (dateString) => {
-    if (!dateString) return "-";
-    try {
-      return new Intl.DateTimeFormat("ar-SA-u-ca-islamic", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      }).format(new Date(dateString));
-    } catch (e) {
-      return dateString;
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -150,12 +137,12 @@ const handleDownloadPdf = async () => {
 
                 <div className="info-row">
                   <span>تاريخ إصدار الشهادة الصحية:</span>
-                  <p>{formatHijriDate(certificate.healthCertIssueDate)}</p>
+                  <p>{certificate.healthCertIssueDate ? new Date(certificate.healthCertIssueDate).toLocaleDateString("en-GB") : "-"}</p>
                 </div>
 
                 <div className="info-row">
                   <span>تاريخ نهاية الشهادة الصحية:</span>
-                  <p>{formatHijriDate(certificate.healthCertExpiryDate)}</p>
+                  <p>{certificate.healthCertExpiryDate ? new Date(certificate.healthCertExpiryDate).toLocaleDateString("en-GB") : "-"}</p>
                 </div>
 
                 <div className="info-row">
@@ -165,7 +152,7 @@ const handleDownloadPdf = async () => {
 
                 <div className="info-row">
                   <span>تاريخ انتهاء البرنامج التثقيفي:</span>
-                  <p>{formatHijriDate(certificate.educationalProgramEndDate)}</p>
+                  <p>{certificate.educationalProgramEndDate ? new Date(certificate.educationalProgramEndDate).toLocaleDateString("en-GB") : "-"}</p>
                 </div>
 
               </div>
