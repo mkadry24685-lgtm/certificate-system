@@ -201,8 +201,8 @@ function AddCertificate() {
         </div>
 
         <div>
-          <label>تاريخ إصدار الشهادة الصحية (هجري)*</label>
-          <input type="text" name="healthCertIssueDate" value={form.healthCertIssueDate} onChange={handleChange} required placeholder="مثال: 1447-05-01" />
+          <label>تاريخ إصدار الشهادة الصحية *</label>
+          <input type="date" name="healthCertIssueDate" value={form.healthCertIssueDate} onChange={handleChange} required />
         </div>
 
         <div>
@@ -211,8 +211,8 @@ function AddCertificate() {
         </div>
 
         <div>
-          <label>تاريخ انتهاء الشهادة الصحية (هجري)*</label>
-          <input type="text" name="healthCertExpiryDate" value={form.healthCertExpiryDate} onChange={handleChange} required placeholder="مثال: 1448-05-01" />
+          <label>تاريخ انتهاء الشهادة الصحية *</label>
+          <input type="date" name="healthCertExpiryDate" value={form.healthCertExpiryDate} onChange={handleChange} required  />
         </div>
 
         <div>
@@ -226,8 +226,8 @@ function AddCertificate() {
         </div>
 
         <div>
-          <label>تاريخ انتهاء البرنامج التثقيفي (هجري)*</label>
-          <input type="text" name="educationalProgramEndDate" value={form.educationalProgramEndDate} onChange={handleChange} required placeholder="مثال: 1448-05-01" />
+          <label>تاريخ انتهاء البرنامج التثقيفي *</label>
+          <input type="date" name="educationalProgramEndDate" value={form.educationalProgramEndDate} onChange={handleChange} />
         </div>
 
         <div>

@@ -6,7 +6,6 @@
 }
 
 
-
 .cert-container {
   width: 100%;
   display: flex;
@@ -19,11 +18,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
+  width: 560px;
 }
 
 .cert-card {
-  width: 600px;
+  width: 560px;
   background: #f4f8fb;
   border: 1px solid #bebcbc8a;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -39,6 +38,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: 10px;
+    
 
 }
 
@@ -81,7 +82,7 @@
   color: #f0fffa;
   letter-spacing: 1px;
   direction: rtl;
-  padding: 5px 10px;
+  padding: 5px 8px;
   margin: 0;
   font-size: 28px;
 }
@@ -96,7 +97,7 @@
 
 /* ====== LEFT SIDE (PHOTO + QR) ====== */
 .cert-left {
-  width: 130px;
+  width: 120px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -106,22 +107,23 @@
 
 .cert-photo-box {
   width: 100%;
-  height: 110px;
+  height: 120px;
   border: 1px solid #82b74b;
   margin-bottom: 10px;
   background: #f9f9f9;
   padding: 5px;
+
 }
 
 .cert-photo {
-  width: 120px;
-  height: 110px;
+  width: 100%;
+  height: 120px;
   object-fit: cover;
 }
 
 .cert-qr-box {
   background: #f9f9f9;
-  border: 1px solid #82b74b;
+  border: 1px solid #83b74b;
   text-align: center;
   width: 100%;
   height: 120px; /* match photo box height */
@@ -134,8 +136,8 @@
 .cert-qr-box canvas,
 .cert-qr-box svg {
   width: 100%;
-  height: 110px;
-  margin-top: 10px;
+  height: 120px;
+  margin-top: 5px;
   /* ensure images fit without distortion */
   object-fit: cover;
 }
@@ -162,15 +164,16 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   direction: rtl;
+
 }
 
 .info-row {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 0px 12px;
+  padding: 0px 5px;
   text-align: right;
-  margin: 0px 0px -10px 0px;
+  margin: 0px 0px 0px 0px;
 }
 
 .info-row span {
@@ -186,7 +189,7 @@
 }
 
 .info-row p {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 500;
   color: #333;
   background: white;
@@ -201,17 +204,17 @@
 
 /* ====== LINKS SECTION ====== */
 .links {
-  margin-top: 2px;
   padding-right: 20px;
   border-bottom: 1px solid #107475;
   border-right: 1px solid #107475;
-  border-radius: 0px 1px 25px 0px;
+  border-radius: 0px 1px 22px 0px;
   direction: rtl;
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 15px;
   flex-wrap: wrap
+
 }
 
 .links div {
@@ -220,7 +223,7 @@
   gap: 3px;
   color: #107475;
   font-weight: 700;
-  font-size: 10px;
+  font-size: 8px;
   font-family: Arial, sans-serif;
 }
 
@@ -246,7 +249,7 @@
 
 .num{
     font-weight: 500;
-    font-size: 13px;
+    font-size: 10px;
     margin-left: 5px;
     color: #686868;
     font-size:20px;
@@ -265,8 +268,8 @@
   font-size: 5px;
 }
 .circle2 {
-  width: 23px;
-  height: 23px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1.6px solid #82b74b;
   display: flex;
@@ -347,21 +350,32 @@
 }
 
 /* ====== PRINT STYLES ====== */
-
-
 @media print {
 
-@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
 
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
-  body,
-  .cert-container {
-    background: white !important;
+  html, body {
+    margin: 0 !important;
     padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .cert-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: white !important;
+    width: 297mm !important;
+    height: auto !important;
   }
 
   .cert-actions {
@@ -369,30 +383,201 @@
   }
 
   .cert-wrapper {
-    width: 100% !important;
-    justify-content: center;
+    width: 297mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 🔑 نفس مقاس التصميم */
   .cert-card {
-    width: 600px !important;
+    width: 297mm !important;
+    height: auto !important;
     box-shadow: none !important;
-    border: 1px solid #bebcbc8a !important;
-    background: #f4f8fb !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
   }
 
-  .cert-photo-box {
-    width: 130px !important;
-    height: 110px !important;
+  /* ===== PAGE 1 - Full certificate content ===== */
+  .containerTop {
+    width: 297mm !important;
+    height: 210mm !important;
+    page-break-after: always !important;
+    page-break-before: auto !important;
+    page-break-inside: avoid !important;
+    break-after: page !important;
+    break-before: auto !important;
+    break-inside: avoid !important;
+    background-image: url('/back1.png') !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    border: 1px solid #1a1a1a3d !important;
+    overflow: hidden !important;
   }
 
-  .cert-qr-box img {
-    width: 120px !important;
-    height: 120px !important;
+  /* Scale internal content to fit */
+  .header-section {
+    transform-origin: top right;
+    width: 100% !important;
   }
 
-  img {
-    page-break-inside: avoid;
+  .cert-header {
+    gap: 8px !important;
   }
-}}
+
+  .cert-logo {
+    width: 100px !important;
+  }
+
+  .line {
+    height: 85px !important;
+  }
+
+  .main-title {
+    font-size: 52px !important;
+    padding: 8px 12px !important;
+  }
+
+  .cert-top-section {
+    flex: 1;
+    display: flex !important;
+    gap: 15px !important;
+  }
+
+  .cert-left {
+    width: 270px !important;
+  }
+
+  .cert-photo-box,
+  .cert-qr-box {
+    width: 270px !important;
+    height: 270px !important;
+  }
+
+  .cert-photo {
+    width: 270px !important;
+    height: 270px !important;
+  }
+
+  .cert-qr-box img,
+  .cert-qr-box canvas,
+  .cert-qr-box svg {
+    width: 270px !important;
+    height: 270px !important;
+  }
+
+  .cert-right {
+    flex: 1 !important;
+  }
+
+  .cert-name {
+    font-size: 41px !important;
+    margin: 0 0 5px 0 !important;
+  }
+
+  .cert-info-grid {
+    gap: 5px 8px !important;
+  }
+
+  .info-row {
+    padding: 0 8px !important;
+    font-size: 42px !important;
+  }
+
+  .info-row span {
+    font-size: 24px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .info-row p {
+    font-size: 24px !important;
+    min-height: 28px !important;
+    padding: 3px 8px !important;
+
+  }
+
+  .links {
+    padding-right: 25px !important;
+      border-bottom: 1.5px solid #107475;
+  border-right: 1.5px solid #107475;
+    border-radius: 0px 2px 32px 0px !important;
+    gap: 20px !important;
+  }
+
+  .links div {
+    font-size: 20px !important;
+    gap: 13px !important;
+  }
+
+  .circle {
+    width: 28px !important;
+    height: 28px !important;
+  }
+
+  .circle svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .circle2 {
+    width: 43px !important;
+    height: 43px !important;
+  }
+
+  .circle2 svg {
+    width: 29px !important;
+    height: 29px !important;
+  }
+
+  .num {
+    font-size: 37px !important;
+  }
+
+  .title2 {
+    font-size: 22px !important;
+    margin-left:10px !important;
+  }
+
+  /* ===== PAGE 2 - Footer only ===== */
+  .cert-footer {
+    width: 297mm !important;
+    min-height: 210mm !important;
+    max-height: 210mm !important;
+    height: 210mm !important;
+    page-break-before: always !important;
+    page-break-after: auto !important;
+    page-break-inside: avoid !important;
+    break-before: page !important;
+    break-after: auto !important;
+    break-inside: avoid !important;
+    background-image: url('/back2.png.jpeg') !important;
+    background-size: 100% 100% !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 1px solid #1a1a1a3d !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .cert-footer::before {
+    content: '' !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+}
 
